@@ -1,13 +1,30 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface LandingProps {
   onStart: () => void;
 }
 
 const Landing: React.FC<LandingProps> = ({ onStart }) => {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleVideoClick = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
   return (
-    <div className="animate-fadeIn">
+    <div className="animate-fadeIn relative">
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[100] animate-bounce">
+          <div className="bg-navy/90 backdrop-blur-md text-white px-6 py-3 rounded-2xl shadow-2xl border border-white/10 flex items-center gap-3">
+            <span className="material-symbols-outlined text-blue-400">info</span>
+            <p className="text-sm font-bold tracking-wide">暂无演示视频，敬请期待</p>
+          </div>
+        </div>
+      )}
+
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7">
@@ -29,7 +46,10 @@ const Landing: React.FC<LandingProps> = ({ onStart }) => {
                 立即开始诊断
                 <span className="material-symbols-outlined text-xl">arrow_forward</span>
               </button>
-              <button className="bg-white text-navy border border-slate-200 px-10 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all">
+              <button 
+                onClick={handleVideoClick}
+                className="bg-white text-navy border border-slate-200 px-10 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all"
+              >
                 查看演示视频
               </button>
             </div>
