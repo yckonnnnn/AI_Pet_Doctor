@@ -1,0 +1,7 @@
+{
+  "name": "PetAI Health - Intelligent Diagnostic Center",
+  "description": "A world-class AI pet medical diagnostic platform featuring real-time analysis, expert consultations, and a premium veterinary pharmacy.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
