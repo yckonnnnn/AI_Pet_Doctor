@@ -4,13 +4,13 @@
 
 # PetAI Health - AI 智能宠物诊断中心
 
-This contains everything you need to run your app locally.
+基于 Google Gemini 的宠物健康智能诊断 Web 应用：上传宠物照片与症状描述，AI 辅助分析可能的健康问题并给出就诊建议。
 
-View your app in AI Studio: https://ai.studio/apps/drive/1rJ5Ulf3OoZbz2WczdjL7pzIIdtKIF8Fw
+在线体验（AI Studio）: https://ai.studio/apps/drive/1rJ5Ulf3OoZbz2WczdjL7pzIIdtKIF8Fw
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js 18+
 
 
 1. Install dependencies:
